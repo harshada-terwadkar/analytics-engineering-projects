@@ -1,0 +1,48 @@
+name: Daily Quote Video
+
+on:
+  schedule:
+    # Runs at 01:00 PM UTC every day
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+    # Allows for manual triggering from the GitHub Actions tab
+
+jobs:
+  generate-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # Step 4: Install dependencies and ffmpeg
+      - name: Install dependencies
+        run: |
+          if ${{ steps.cache-pip.outputs.cache-hit != 'true' }}; then
+            pip install -r projects/side_gig/requirements.txt
+          fi
+          sudo apt-get install -y ffmpeg
+
+      # Step 5: Run the Python script to generate the video
+      - name: Run video generator
+        run: python projects/side_gig/video_gen.py
+
+      # Step 6: Send video via email
+      - name: Send video via email
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.EMAIL_USERNAME}}
+          password: ${{secrets.EMAIL_PASSWORD}}
+          from: ${{secrets.EMAIL_USERNAME}} # Added this line
+          subject: "Your new video is ready!"
+          body: "Hello, your video has been successfully generated. Find it attached."
+          to: ${{secrets.EMAIL_USERNAME}}
+          cc: ${{secrets.EMAIL_USERNAME_CC}}
+          attachments: daily_quote_video.mp4
