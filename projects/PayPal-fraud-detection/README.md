@@ -128,7 +128,3 @@ jupyter notebook PayPal_Fraud_Detection.ipynb
 ## 🧰 Tech stack
 
 Python · pandas · NumPy · scikit-learn · XGBoost · Matplotlib · Jupyter
-
-## 🙏 Credits
-
-The problem statement and simulated dataset come from the **PayPal Fraud Detection** project by Daniel Lee at [DataScienceSchool.com](https://datascienceschool.com), used for personal and educational purposes. The data analysis, feature engineering, models, policy simulation and write-up are my own work.

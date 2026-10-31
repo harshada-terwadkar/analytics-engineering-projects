@@ -52,7 +52,7 @@ Single tickets are very noisy (the same flight in the same week can vary by abou
 | **7. Evaluation** | Compared against a "business rule" benchmark (median price for the same route, fare class and weeks before departure) using MAPE, MAE, RMSE and R². Checked every subgroup for Simpson's paradox. | The model beats the benchmark overall **and** in every fare class and lead-time bucket. |
 | **8. Scenario planning** | Built `predict_booking_calendar()`, `plot_booking_calendar()` and `booking_advice()`, ran example scenarios, and **backtested** the advice on real 2024 bookings. | Proves real user savings, not just model accuracy. |
 
-A detailed, beginner-friendly walkthrough of every notebook section is in [docs/Notebook_Explained.md](docs/Notebook_Explained.md).
+A section-by-section walkthrough of the notebook is in [docs/Notebook_Explained.md](docs/Notebook_Explained.md).
 
 ### How it fits together
 
@@ -98,8 +98,8 @@ Raw bookings ──► Clean & format ──► Features (days_before, weekday, 
 ## ▶️ How to run
 
 ```bash
-git clone https://github.com/<your-username>/google-flights-airfare-forecast.git
-cd google-flights-airfare-forecast
+git clone https://github.com/harshada-terwadkar/analytics-engineering-projects.git
+cd analytics-engineering-projects/projects/Google-flights-airfare-forecast
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
@@ -119,7 +119,3 @@ You can also open the notebook in Google Colab and upload the CSV to `data/`.
 ## 🧰 Tech stack
 
 Python · pandas · NumPy · scikit-learn · XGBoost · Matplotlib · Jupyter
-
-## 🙏 Credits
-
-The problem statement, simulated dataset and notebook template come from the **Google Flights Airfare Forecast** project by Daniel Lee at [DataScienceSchool.com](https://datascienceschool.com), used for personal and educational purposes. The analysis, feature engineering, models, scenario tool and write-up are my own work.

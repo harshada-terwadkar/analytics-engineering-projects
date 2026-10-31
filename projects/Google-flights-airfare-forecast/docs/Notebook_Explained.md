@@ -197,10 +197,10 @@ Turns the table into a sentence, for example:
 If no day is cheaper, it says to book today.
 
 ### Full calendar chart
-Shows predicted prices from 82 days out until departure. You can see the weekly Fri/Sat spikes (orange dots) and the steep climb after the 60-day mark. That's the visual story for the presentation.
+Shows predicted prices from 82 days out until departure. You can see the weekly Fri/Sat spikes (orange dots) and the steep climb after the 60-day mark.
 
 ### More example scenarios
-Runs five different routes and fare classes and shows the best day and saving for each. These are useful as presentation examples.
+Runs five different routes and fare classes and shows the best day and saving for each.
 
 ### Backtest: do users actually save?
 **What:** replays about 3,200 real 2024 searches. For each one it picks the day the model says is cheapest in the next 7 days, then checks the **actual** price on that day.
@@ -224,7 +224,7 @@ Raw bookings ──► Clean & format ──► Features (days_before, weekday, 
                                               Best day + saving
 ```
 
-## Key takeaways for travellers (and for the presentation)
+## Key takeaways
 1. **Book 60 or more days ahead.** Inside 30 days, fares roughly double.
 2. **Book Monday to Wednesday, not Friday or Saturday** (about 15 to 20% cheaper).
 3. **Close to departure, book now.** Waiting usually costs more, and the calendar tells you so.
